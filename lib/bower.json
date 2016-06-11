@@ -1,0 +1,21 @@
+{
+  "name": "lib",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Chris Barrett <c.barrett@me.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/csbarrett1/tobias",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularfire": "^2.0.1",
+    "angular-route": "^1.5.6"
+  }
+}
