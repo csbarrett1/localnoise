@@ -1,13 +1,13 @@
-
+console.log("ZipCTRL");
 "use strict";
-app.controller("ZipCTRL", function($scope, zipQueryStore){
+app.controller("ZipCTRL", function($scope, $location, zipQueryStore){
   $scope.queryStorage = [];
-  console.log ("zipsearch", $("#zipsearch"));
 
   $scope.searchZIP = () => {
-    zipQueryStore.zipSearchCall()
+   zipQueryStore.zipSearchCall()
       .then(function(queryResults){
         $scope.queryStorage = queryResults[0];
+        $location.path("#/date");
     });
   };
 
