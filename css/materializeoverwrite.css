@@ -1,0 +1,32 @@
+/* label color */
+.input-field label {
+  color: #FFFFFF; }
+
+/* label color */
+.input-field:focus label {
+  color: rgba(255, 255, 255, 0.2); }
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: rgba(255, 255, 255, 0.2); }
+
+/* label underline color */
+.input-field input[type=password] {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+
+.input-field input[type=email] {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+
+/* valid color */
+.input-field input[type=password].valid {
+  border-bottom: 1px solid #FFFFFF;
+  box-shadow: 0 1px 0 0 #FFFFFF; }
+
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000; }
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000; }

@@ -1,0 +1,97 @@
+.loginmodal {
+  width: 300px;
+  height: 425px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-top: 100px;
+  background-color: rgba(255, 255, 255, 0.2); }
+
+.loginbtn {
+  border-radius: 6px;
+  color: #939fb6; }
+
+.loginbody {
+  margin-top: 50px; }
+
+h5 {
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px; }
+
+.submit {
+  width: 100px; }
+
+.submit:hover {
+  cursor: pointer; }
+
+.plzlogin {
+  width: 100px; }
+
+.logo {
+  margin-top: 20px;
+  width: 400px; }
+
+.navbar {
+  margin: 10px; }
+
+a {
+  margin: 10px; }
+
+/* label color */
+.input-field label {
+  color: #FFFFFF; }
+
+/* label color */
+.input-field:focus label {
+  color: rgba(255, 255, 255, 0.2); }
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: rgba(255, 255, 255, 0.2); }
+
+/* label underline color */
+.input-field input[type=password] {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+
+.input-field input[type=email] {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+
+/* valid color */
+.input-field input[type=password].valid {
+  border-bottom: 1px solid #FFFFFF;
+  box-shadow: 0 1px 0 0 #FFFFFF; }
+
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #000;
+  box-shadow: 0 1px 0 0 #000; }
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000; }
+
+.searchbar {
+  margin-top: 300px;
+  width: 700px; }
+
+.searchbar input[type=text] {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: white; }
+
+html {
+  height: 100%;
+  background: -webkit-linear-gradient(#cbd1e4 0%, #939fb6 100%);
+  background: -o-linear-gradient(#cbd1e4 0%, #939fb6 100%);
+  background: linear-gradient(#cbd1e4 0%, #939fb6 100%);
+  background-size: cover; }
+
+a {
+  color: white;
+  text-align: center; }
+
+a:hover {
+  color: rgba(255, 255, 255, 0.5); }

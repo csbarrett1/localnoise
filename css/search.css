@@ -1,0 +1,9 @@
+.searchbar {
+  margin-top: 300px;
+  width: 700px; }
+
+.searchbar input[type=text] {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: white; }

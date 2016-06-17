@@ -1,0 +1,21 @@
+@import 'login';
+@import 'navbar';
+@import 'materializeoverwrite';
+@import 'search';
+
+html {
+  height: 100%;
+  background: -webkit-linear-gradient(rgba(203,209,228,1) 0%, rgba(147,159,182,1) 100%);
+  background: -o-linear-gradient(rgba(203,209,228,1) 0%, rgba(147,159,182,1) 100%);
+  background: linear-gradient(rgba(203,209,228,1) 0%, rgba(147,159,182,1) 100%);
+  background-size: cover;
+}
+
+a {
+  color: white;
+  text-align: center;
+}
+
+a:hover{
+  color: rgba(255, 255, 255, .5);
+}
