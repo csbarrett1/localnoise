@@ -64,8 +64,8 @@ a {
   box-shadow: 0 1px 0 0 #FFFFFF; }
 
 /* invalid color */
-.input-field input[type=text].invalid {
-  border-bottom: 1px solid #000;
+.input-field input[type=text] {
+  border-bottom: 1px solid #FFFFFF;
   box-shadow: 0 1px 0 0 #000; }
 
 /* icon prefix focus color */
@@ -81,6 +81,12 @@ a {
   font-size: 40px;
   margin-bottom: 10px;
   color: white; }
+
+.startdate {
+  width: 33.3333%; }
+
+.enddate {
+  width: 33.3333%; }
 
 html {
   height: 100%;

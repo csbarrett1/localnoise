@@ -1,6 +1,61 @@
 <div class="searchbar container">
   <div class="col s4 offset-s3">
-    <input class="searchtext" id="zipsearch" type="text" placeholder="search by zip code">
-    <a class="btn-flat right waves-effect waves-light transparent" type="submit" name="action" ng-click="searchZip()">Search<i class="material-icons right">search</i></a>
+    <input class="searchtext" id="zipsearch" type="text" ng-model="zipresult" placeholder="search by zip code">
+    <div class="datesearch">
+      <input input-date
+        type="text"
+        name="created"
+        class="col s3"
+        ng-model="startDate"
+        container="body"
+        format="yyyy-mm-dd"
+        months-full="{{ month }}"
+        months-short="{{ monthShort }}"
+        weekdays-full="{{ weekdaysFull }}"
+        weekdays-short="{{ weekdaysShort }}"
+        weekdays-letter="{{ weekdaysLetter }}"
+        disable="disable"
+        min="{{ minDate }}"
+        max="{{ maxDate }}"
+        today="today"
+        clear="clear"
+        close="close"
+        select-years="15"
+        on-start="onStart()"
+        on-render="onRender()"
+        on-open="onOpen()"
+        on-close="onClose()"
+        on-set="onSet()"
+        on-stop="onStop()"
+        placeholder="start date" />
+      <input input-date
+        type="text"
+        name="created"
+        id="inputCreated"
+        ng-model="endDate"
+        container="body"
+        format="yyyy-mm-dd"
+        months-full="{{ month }}"
+        months-short="{{ monthShort }}"
+        weekdays-full="{{ weekdaysFull }}"
+        weekdays-short="{{ weekdaysShort }}"
+        weekdays-letter="{{ weekdaysLetter }}"
+        disable="disable"
+        min="{{ minDate }}"
+        max="{{ maxDate }}"
+        today="today"
+        clear="clear"
+        close="close"
+        select-years="15"
+        on-start="onStart()"
+        on-render="onRender()"
+        on-open="onOpen()"
+        on-close="onClose()"
+        on-set="onSet()"
+        on-stop="onStop()"
+        placeholder="end date" />
+    </div>
+    <button class="btn-flat right waves-effect waves-light transparent" type="submit" name="action" ng-click="search(zipresult, startDate, endDate)">Search<i class="material-icons right">search</i></button>
   </div>
 </div>
+

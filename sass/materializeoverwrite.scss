@@ -28,8 +28,8 @@
      box-shadow: 0 1px 0 0 #FFFFFF;
    }
    /* invalid color */
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid #000;
+   .input-field input[type=text] {
+     border-bottom: 1px solid #FFFFFF;
      box-shadow: 0 1px 0 0 #000;
    }
    /* icon prefix focus color */
@@ -37,4 +37,3 @@
      color: #000;
    }
         
-  

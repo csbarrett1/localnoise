@@ -31,7 +31,7 @@ app.config(function($routeProvider){
         }).
         when("/location", {
             templateUrl: "partials/location.html",
-            // controller: ""
+            controller: "DateCTRL",
             resolve: {isAuth}
         }).
         when("/date", {
