@@ -17,7 +17,6 @@ app.controller('DateCTRL', function($scope, $location, queryStore) {
     $scope.minDate = (new Date($scope.currentTime.getTime() - ( 1000 * 60 * 60 *24 * days ))).toISOString();
     $scope.maxDate = (new Date($scope.currentTime.getTime() + ( 1000 * 60 * 60 *24 * days ))).toISOString();
 
-    $scope.testing = "hello";
 
   $scope.search = (zipcode, startdate) => {
    
