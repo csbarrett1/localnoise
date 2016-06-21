@@ -29,14 +29,9 @@ app.config(function($routeProvider){
             controller: "AuthCTRL",
             resolve: !{isAuth}
         }).
-        when("/location", {
-            templateUrl: "partials/location.html",
+        when("/search", {
+            templateUrl: "partials/search.html",
             controller: "DateCTRL",
-            resolve: {isAuth}
-        }).
-        when("/date", {
-            templateUrl: "partials/date.html",
-            // controller: ""
             resolve: {isAuth}
         }).
         when("/favorites", {
@@ -44,10 +39,10 @@ app.config(function($routeProvider){
             // controller: ""
             resolve: {isAuth}
         }).
-        when("/logout", {
-            templateUrl: "partials/login.html",
-            // controller: ""
-            resolve: !{isAuth}
+        when("/results", {
+            templateUrl: "partials/results.html",
+            controller: "DateCTRL",
+            resolve: {isAuth}
         }).
       otherwise("/");
 });

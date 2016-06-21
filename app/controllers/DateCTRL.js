@@ -1,6 +1,8 @@
 "use strict";
 
 app.controller('DateCTRL', function($scope, $location, queryStore) {
+    $scope.result = [];
+
     var currentTime = new Date();
 
     $scope.currentTime = currentTime;
@@ -15,10 +17,16 @@ app.controller('DateCTRL', function($scope, $location, queryStore) {
     $scope.minDate = (new Date($scope.currentTime.getTime() - ( 1000 * 60 * 60 *24 * days ))).toISOString();
     $scope.maxDate = (new Date($scope.currentTime.getTime() + ( 1000 * 60 * 60 *24 * days ))).toISOString();
 
-  $scope.search = (zipcode, startdate, enddate) => {
-   queryStore.searchCall(zipcode, startdate, enddate)
+    $scope.testing = "hello";
+
+  $scope.search = (zipcode, startdate) => {
+   
+    $scope.results = queryStore.searchCall(zipcode, startdate)
       .then(function(queryResults){
-        console.log("queryResults", queryResults);
+        // console.log("queryResults", queryResults.Events);
+       $scope.result = queryResults.Events;
+
+        // console.log("scopeResults", $scope.results);
 
     })
   };

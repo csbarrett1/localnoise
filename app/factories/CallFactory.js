@@ -1,18 +1,16 @@
 "use strict";
 
-console.log("zipfactory1");
 app.factory("queryStore", function($q, $http, $location){
 
-    var searchCall = function(zipcode, startdate, enddate){
-        console.log(zipcode);
-        console.log(startdate);
-        console.log(enddate);
+    var searchCall = function(zipcode, startdate){
+
         return $q(function(resolve, reject){
-            $http.get("http://api.jambase.com/events?zipCode="+zipcode+"&radius=20&startDate="+startdate+"&endDate="+enddate+"&page=0&api_key=zrct7ypqts4utjwbhdpr5tq6")
+            $http.get("http://api.jambase.com/events?zipCode="+zipcode+"&radius=50&startDate="+startdate+"&page=0&api_key=zrct7ypqts4utjwbhdpr5tq6")
                 .success(function(queryData){
-                    var preKeyData = queryData.Events;
-                    console.log("queryData", queryData.Events);
+                    var preKeyData = queryData;
+
                     resolve(preKeyData);
+                    $location.path("/results");
                 })
                 .error(function(error){
                 reject(error);
@@ -20,11 +18,6 @@ app.factory("queryStore", function($q, $http, $location){
 
         });
     }
-
-
-
-
-
 
     return {searchCall:searchCall};
 }); 

@@ -39,7 +39,7 @@ app.controller("AuthCTRL", function($scope, $rootScope, $location, firebaseURL, 
       .then(() => {
         $scope.hasUser = true;
         $rootScope.isActive = true;
-        $location.path("/location");
+        $location.path("/search");
         $scope.$apply();
       })
   };
