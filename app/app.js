@@ -34,8 +34,8 @@ app.config(function($routeProvider){
             controller: "DateCTRL",
             resolve: {isAuth}
         }).
-        when("/favorites", {
-            templateUrl: "partials/favorites.html",
+        when("/calender", {
+            templateUrl: "partials/calender.html",
             // controller: ""
             resolve: {isAuth}
         }).

@@ -1,13 +1,18 @@
-.searchbar {
-  margin-top: 300px;
-  width: 700px;
+.searchmodal {
+  vertical-align: middle;
+  width: 50%;
+  margin-top: 200px;
+}
+
+.searchbody {
+  height: 179px;
 }
 
 .searchbar input[type=text] {
-  text-align: center;
-  font-size: 40px;
+  text-align: left;
+  font-size: 20px;
   margin-bottom: 10px;
-  color: white;
+  color: grey;
 }
 
 .startdate {
