@@ -1,30 +1,26 @@
 <div class="container">
-  <div class="row">
-    <div class="col s12">
-      <div class="card-panel z-depth-0">
-        <div>Search Results:</div>
-         <ul class="collapsible z-depth-0" data-collapsible="accordion">
-
-          <div ng-repeat="result in results">
-            <div>{{result.Artist}}</div>
-          </div>
-
-          <li>
-            <div class="collapsible-header"><i class="material-icons">view_headline</i>Gregg Allman<span class="right">June 22nd 2016, 8:00 pm<i ng-click="addToCalendar(result)" class="fa fa-calendar-plus-o right" aria-hidden="true"></i></span></div>
-            <div class="collapsible-body">
-              <h3 class="center">Gregg Allman</h3>
+  <div class="card-panel z-depth-0">
+    <div>Search Results:</div>
+     <ul class="collapsible z-depth-0" data-collapsible="accordion" >
+  
+      <li ng-repeat="date in dates track by $index">
+        <li ng-repeat="headliner in headliners track by $index">
+          <li ng-repeat="venue in venues">
+            <div  class="collapsible-header"><i class="material-icons">view_headline</i>{{headliner}}<span class="right">{{date}}<i ng-click="addToCalendar(result)" class="fa fa-calendar-plus-o right" aria-hidden="true"></i></span></div>
+            <div class="collapsible-body" >
+              <h3 class="center">{{headliner}}</h3>
               <article class=" center">w/ Jaimoe's Jasssz Band, Shovels & Rope, Gabriel Kelley, Andrea Davidson, Brothers Osborne, Levon</article>
-              <address class="center"><p>Carl Black Chevy Woods Amphitheater<br>4225 Whites Creek Pike<br> Whites Creek, TN 37189</p></address>
+              <address class="center"><p>{{venue.Name}}<br>{{venue.Address}}<br> {{venue.City}}, {{venue.StateCode}} {{venue.ZipCode}}</p></address>
               <div class="center">
                 <a ng-href="http://www.awin1.com/awclick.php?awinmid=4103&awinaffid=139685&platform=tm&p=http%3a%2f%2fwww.ticketmaster.com%2fevent%2f1B005039A2132E0A" target="_newtab" class="waves-effect waves-light btn blue-grey z-depth-0">Buy Tickets</a>
                 <a ng-click="addToCalendar()" class="waves-effect waves-light btn blue-grey z-depth-0">Add to Calender</a>         
               </div>
             </div>
           </li>
-        
-          
-        </ul>  
-      </div>
-    </div>
+        </li>
+      </li>
+    
+      
+    </ul>  
   </div>
 </div>

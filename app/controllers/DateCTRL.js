@@ -2,6 +2,12 @@
 
 app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams) {
     $scope.results = [];
+    $scope.dates = [];
+    $scope.venues = [];
+    $scope.artists = [];
+    $scope.headliners = [];
+
+
     var currentTime = new Date();
 
     $scope.currentTime = currentTime;
@@ -17,8 +23,6 @@ app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams)
     $scope.maxDate = (new Date($scope.currentTime.getTime() + ( 1000 * 60 * 60 *24 * days ))).toISOString();
 
 
-// moment().format('MMMM Do YYYY, h:mm:ss a'); // June 22nd 2016, 8:22:02 am
-
   $scope.search = (zipcode, startdate) => {
     $location.path("/results").search({zipcode: zipcode, startdate: startdate});
   };
@@ -27,9 +31,24 @@ app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams)
         queryStore.searchCall($routeParams.zipcode, $routeParams.startdate)
           .then(function(queryResults){                  
               $scope.results = queryResults.Events;
+              for (let i = 0; i < $scope.results.length; i++){
+                  let newdate = new Date($scope.results[i].Date);
+                    $scope.dates.push(moment(newdate).utcOffset("06:00").format('MMMM Do YYYY, h:mm:ss a')); 
+              }
+              for (let i = 0; i < $scope.results.length; i++){
+                $scope.venues.push($scope.results[i].Venue)
+              }
+              for (let i = 0; i < $scope.results.length; i++){
+                $scope.artists.push($scope.results[i].Artists);
+              }
+              for (let i = 0; i < $scope.artists.length; i++){
+                $scope.headliners.push($scope.artists[i][0].Name);
+              }
+
+              // console.log("artists", $scope.artists);
+              console.log("headliners", $scope.headliners);
         }) 
       }
-
 
 
 
