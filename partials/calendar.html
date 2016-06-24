@@ -1,6 +1,8 @@
+<div ng-repeat="show in addedShows"><div>{{show}}</div></div>
+
 <div class="container">
   <div class="card-panel z-depth-0">
-    <div>Search Results:</div>
+    <div>Calendar</div>
      <ul class="collapsible z-depth-0" data-collapsible="accordion" >
       <li ng-repeat="result in results track by $index">
         <div  class="collapsible-header"><i class="expand material-icons">view_headline</i>{{headliners[$index]}}<span class=center> @ {{venues[$index].Name}}</span><span class="right"><span class="right">{{dates[$index]}}<i ng-click="addToCalendar($index)" class="calendar fa fa-calendar-plus-o right" aria-hidden="true"></i></span></div>

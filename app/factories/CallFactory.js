@@ -11,10 +11,9 @@ app.factory("queryStore", function($q, $http, $location){
                     resolve(preKeyData);
                 })
                 .error(function(error){
-                    // var preKeyData = queryData;
                     var preKeyData = events;
                     resolve(preKeyData);
-                reject(error);
+                // reject(error);
             });
 
         });

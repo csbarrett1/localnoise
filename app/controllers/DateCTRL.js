@@ -1,11 +1,12 @@
 "use strict";
 
-app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams) {
+app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams, addedStorage) {
     $scope.results = [];
     $scope.dates = [];
     $scope.venues = [];
     $scope.artists = [];
     $scope.headliners = [];
+    $scope.url = [];
     $scope.openers = [];
     $scope.getId = [];
     $scope.addToCal = [];
@@ -30,7 +31,7 @@ app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams)
     $location.path("/results").search({zipcode: zipcode, startdate: startdate});
   };
 
-  if ($location.url !== "search") {
+  if ($location.url !== "#/search") {
         queryStore.searchCall($routeParams.zipcode, $routeParams.startdate)
           .then(function(queryResults){                  
               $scope.results = queryResults.Events;
@@ -48,49 +49,29 @@ app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams)
                 $scope.headliners.push($scope.artists[i][0].Name);
               }
               for (let i = 0; i < $scope.artists.length; i++){
+                $scope.url.push($scope.results.TicketUrl);
+              }
+              for (let i = 0; i < $scope.artists.length; i++){
                 let bandarrays = $scope.artists[i].slice(1, $scope.artists.length + 1);
                 $scope.openers.push(bandarrays);
-            }
+              }
               console.log("openers", $scope.openers);
         }) 
       }
 
+      addedStorage.getAddedToCalList().then(function(someCollection){
+        $scope.addedShows = someCollection;
+      });
 
       $scope.addToCalendar = (addedShow) => {
-        for (let i = 0; i < $scope.results.length; i++){
-            $scope.getId.push($scope.results[i].Id)
-            for (let i = 0; i < $scope.getId.length; i++){
-                $scope.addToCal.push($scope.getId[i].Id)
-            }
-        }
-        console.log("show id", $scope.getId);
-            
+          addedStorage.addShowToCal($scope.results[addedShow])
+          .then(function successCallback(response){
+            $scope.addToCal.push($scope.results[addedShow])     
+          })    
       }
 
 
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

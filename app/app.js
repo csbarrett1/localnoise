@@ -24,6 +24,10 @@ app.config(function($routeProvider){
             controller: "AuthCTRL",
             resolve: !{isAuth}
         }).
+        when("/logout", {
+            templateUrl: "partials/login.html",
+            controller: "AuthCTRL"
+        }).
         when("/register", {
             templateUrl: "partials/register.html",
             controller: "AuthCTRL",
@@ -34,8 +38,8 @@ app.config(function($routeProvider){
             controller: "DateCTRL",
             resolve: {isAuth}
         }).
-        when("/calender", {
-            templateUrl: "partials/calender.html",
+        when("/calendar", {
+            templateUrl: "partials/calendar.html",
             controller: "CalendarCTRL",
             resolve: {isAuth}
         }).
