@@ -6,6 +6,9 @@ app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams)
     $scope.venues = [];
     $scope.artists = [];
     $scope.headliners = [];
+    $scope.openers = [];
+    $scope.getId = [];
+    $scope.addToCal = [];
 
 
     var currentTime = new Date();
@@ -33,7 +36,7 @@ app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams)
               $scope.results = queryResults.Events;
               for (let i = 0; i < $scope.results.length; i++){
                   let newdate = new Date($scope.results[i].Date);
-                    $scope.dates.push(moment(newdate).utcOffset("06:00").format('MMMM Do YYYY, h:mm:ss a')); 
+                    $scope.dates.push(moment(newdate).utcOffset("06:00").format('MMMM Do, YYYY, h:mm a')); 
               }
               for (let i = 0; i < $scope.results.length; i++){
                 $scope.venues.push($scope.results[i].Venue)
@@ -44,13 +47,50 @@ app.controller('DateCTRL', function($scope, $location, queryStore, $routeParams)
               for (let i = 0; i < $scope.artists.length; i++){
                 $scope.headliners.push($scope.artists[i][0].Name);
               }
-
-              // console.log("artists", $scope.artists);
-              console.log("headliners", $scope.headliners);
+              for (let i = 0; i < $scope.artists.length; i++){
+                let bandarrays = $scope.artists[i].slice(1, $scope.artists.length + 1);
+                $scope.openers.push(bandarrays);
+            }
+              console.log("openers", $scope.openers);
         }) 
       }
 
 
+      $scope.addToCalendar = (addedShow) => {
+        for (let i = 0; i < $scope.results.length; i++){
+            $scope.getId.push($scope.results[i].Id)
+            for (let i = 0; i < $scope.getId.length; i++){
+                $scope.addToCal.push($scope.getId[i].Id)
+            }
+        }
+        console.log("show id", $scope.getId);
+            
+      }
+
 
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

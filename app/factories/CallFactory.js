@@ -14,7 +14,7 @@ app.factory("queryStore", function($q, $http, $location){
                     // var preKeyData = queryData;
                     var preKeyData = events;
                     resolve(preKeyData);
-                // reject(error);
+                reject(error);
             });
 
         });

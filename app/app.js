@@ -36,7 +36,7 @@ app.config(function($routeProvider){
         }).
         when("/calender", {
             templateUrl: "partials/calender.html",
-            // controller: ""
+            controller: "CalendarCTRL",
             resolve: {isAuth}
         }).
         when("/results", {

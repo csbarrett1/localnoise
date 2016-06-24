@@ -106,3 +106,15 @@ a {
 
 a:hover {
   color: rgba(255, 255, 255, 0.5); }
+
+.calendar:hover {
+  color: grey;
+  transform: scale(1.2); }
+
+.expand:hover {
+  transform: rotate(90deg); }
+
+.expand, .calendar {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out; }
