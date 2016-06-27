@@ -13,7 +13,7 @@ app.factory("queryStore", function($q, $http, $location){
                 .error(function(error){
                     var preKeyData = events;
                     resolve(preKeyData);
-                // reject(error);
+                reject(error);
             });
 
         });

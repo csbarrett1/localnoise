@@ -13,8 +13,9 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
             id: addedShow.Id,
             date: addedShow.Date,
             venue: addedShow.Venue,
-            artists: addedShow.Artists,
+            title: addedShow.Artists[0].Name,
             ticketurl: addedShow.TicketUrl,
+            added: false
           }))
         .success(function(objectFromFirebase) {
           resolve(objectFromFirebase);
@@ -41,7 +42,6 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
             addedShows.push(addedShowCollection[key]);
         });
         resolve(addedShows);
-        console.log("addedshows", addedShows);
       })
       .error(function(error){
         reject(error);
@@ -49,6 +49,21 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
     });
   };
 
-    return {addShowToCal:addShowToCal, getAddedToCalList:getAddedToCalList};
+
+    var deleteEvent = function(chosenShowId){
+    return $q(function(resolve, reject){
+      $http
+        .delete(firebaseURL + `/shows/${chosenShowId}.json`)
+        .success(function(objectFromFirebase){
+          resolve(objectFromFirebase);
+        })
+        .error(function(error){
+          reject(error);
+      });
+    });
+  };
+
+
+    return {addShowToCal:addShowToCal, getAddedToCalList:getAddedToCalList, deleteEvent:deleteEvent};
 
 });

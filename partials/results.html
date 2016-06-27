@@ -3,17 +3,20 @@
     <div>Search Results:</div>
      <ul class="collapsible z-depth-0" data-collapsible="accordion" >
       <li ng-repeat="result in results track by $index">
-        <div  class="collapsible-header"><i class="expand material-icons">view_headline</i>{{headliners[$index]}}<span class=center> @ {{venues[$index].Name}}</span><span class="right"><span class="right">{{dates[$index]}}<i ng-click="addToCalendar($index)" class="calendar fa fa-calendar-plus-o right" aria-hidden="true"></i></span></div>
+        <div  class="collapsible-header"><i class="expand material-icons">view_headline</i>{{headliners[$index]}}<span class=center> @ {{venues[$index].Name}}</span><span class="right"><span class="right">{{dates[$index]}}</span></div>
         <div class="collapsible-body" >
           <h3 class="center">{{headliners[$index]}}</h3>
-          <article class="center">{{openers[$index]}}</article>
+          <article class="center">{{openernames[$index]}}</article>
           <address class="center"><p>{{venues[$index].Name}}<br>{{venues[$index].Address}}<br> {{venues[$index].City}}, {{venues[$index].StateCode}} {{venues[$index].ZipCode}}</p></address>
           <div class="center">
-            <a ng-href="{{results.url}}" target="_newtab" class="waves-effect waves-light btn blue-grey z-depth-0">Buy Tickets</a>
-            <a ng-click="addToCalendar($index)" class="waves-effect waves-light btn blue-grey z-depth-0">Add to Calendar</a>         
+            <a ng-href="{{urls[$index]}}" target="_newtab" class="waves-effect waves-light btn blue-grey z-depth-0">Buy Tickets</a>
+            <a ng-show="!isAdded" ng-click="addToCalendar($index)" class="waves-effect waves-light btn blue-grey z-depth-0">Add to Calendar</a>         
+            <a ng-show="isAdded" class="disabled btn z-depth-0">Add to Calendar</a>         
           </div>
         </div>
       </li>
     </ul>  
   </div>
 </div>
+
+ng-if

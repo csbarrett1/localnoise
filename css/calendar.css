@@ -1,0 +1,70 @@
+.cal-panel {
+  transition: box-shadow .25s;
+  padding: 20px;
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 2px;
+  background-color: #fff;
+  margin: 0 auto;
+  width: 900px; }
+
+.expand:hover {
+  transform: rotate(90deg); }
+
+.expand, .calendaricon {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out; }
+
+simple-calendar * {
+  user-select: none; }
+
+simple-calendar .calendar {
+  text-align: left;
+  padding: 0;
+  border: 1px solid #dddddd;
+  background-color: #fff;
+  border-radius: 10px; }
+
+simple-calendar .move-month {
+  cursor: pointer; }
+
+simple-calendar .prev-month {
+  float: left; }
+
+simple-calendar .next-month {
+  float: right; }
+
+simple-calendar .current-month {
+  width: 100%;
+  text-align: center;
+  padding: 20px 8px; }
+
+simple-calendar .week {
+  height: 100px; }
+  simple-calendar .week .day:last-child {
+    border-right: none; }
+
+simple-calendar .weekday {
+  text-align: center; }
+
+simple-calendar .weekday, simple-calendar .day {
+  display: inline-block;
+  width: calc(100% / 7); }
+
+simple-calendar .day {
+  height: 100px;
+  padding: 2px;
+  border: 1px solid #dddddd;
+  border-bottom: none;
+  border-left: none;
+  overflow: hidden; }
+  simple-calendar .day:hover {
+    cursor: pointer; }
+  simple-calendar .day.default {
+    background-color: lightblue; }
+  simple-calendar .day.event {
+    background-color: #fdf3ea; }
+  simple-calendar .day.disabled {
+    cursor: default;
+    color: silver;
+    background-color: white; }

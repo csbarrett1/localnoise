@@ -27,6 +27,7 @@ app.factory("AuthFactory", function(firebaseURL) {
         }, (error, authData) => {
           if (error) {
             reject(error);
+            Materialize.toast(error, 3000);
           } else {
             currentUserData = authData;
             resolve(authData);

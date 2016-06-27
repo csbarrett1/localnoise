@@ -4,27 +4,32 @@
 
 /* label color */
 .input-field:focus label {
-  color: rgba(255, 255, 255, 0.2); }
+  color: #A2A2A2; }
 
 /* label focus color */
 .input-field input[type=text]:focus + label {
-  color: rgba(255, 255, 255, 0.2); }
+  color: #A2A2A2; }
+
+/* label underline focus color */
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid #FFFFFF;
+  box-shadow: 0 1px white; }
 
 /* label underline color */
 .input-field input[type=password] {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+  border-bottom: 1px solid #A2A2A2; }
 
 .input-field input[type=email] {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+  border-bottom: 1px solid #A2A2A2; }
 
 /* valid color */
 .input-field input[type=password].valid {
-  border-bottom: 1px solid #FFFFFF;
-  box-shadow: 0 1px 0 0 #FFFFFF; }
+  border-bottom: 1px solid #A2A2A2;
+  box-shadow: 0 1px 0 0 #A2A2A2; }
 
 /* invalid color */
 .input-field input[type=text] {
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #A2A2A2;
   box-shadow: 0 1px 0 0 #000; }
 
 /* icon prefix focus color */

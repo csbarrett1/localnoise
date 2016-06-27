@@ -1,11 +1,12 @@
 @import 'login';
 @import 'navbar';
 @import 'materializeoverwrite';
+@import 'calendar';
 @import 'location';
 
 html {
   height: 100%;
-  background-color: #D6D6D6;
+  background-color: white;
   background-size: cover no-repeat center center fixed;
 }
 
@@ -14,26 +15,21 @@ body {
 }
 
 a {
-  color: white;
+  color: #A2A2A2;
   text-align: center;
 }
 
 a:hover{
-  color: rgba(255, 255, 255, .5);
+  color: #C1C1C1;
 }
 
-.calendar:hover {
+.calendaricon:hover {
   color: grey;
   transform: scale(1.2)
 }
 
-
-.expand:hover {
-  transform: rotate(90deg);
-}
-
-.expand, .calendar {
-  border-radius: 50%;
-  -webkit-transition: -webkit-transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
+.card-panel {
+  max-width: 800px;
+  min-width: 600px;
+  margin: 0 auto;
 }
