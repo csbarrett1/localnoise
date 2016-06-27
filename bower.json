@@ -1,0 +1,17 @@
+{
+  "name": "localnoise",
+  "homepage": "https://github.com/csbarrett1/localnoise",
+  "authors": [
+    "Chris Barrett <c.barrett@me.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
