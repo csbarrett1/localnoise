@@ -1,0 +1,197 @@
+.loginmodal {
+  width: 300px;
+  height: 425px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  margin-top: 100px;
+  background-color: white;
+  border: 1px solid #A2A2A2; }
+
+.loginbtn {
+  border-radius: 6px;
+  color: #939fb6; }
+
+.loginbody {
+  margin-top: 50px; }
+
+h5 {
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px; }
+
+.submit {
+  width: 100px; }
+
+.submit:hover {
+  cursor: pointer; }
+
+.plzlogin {
+  width: 100px; }
+
+.logo {
+  margin-top: 20px;
+  width: 650px; }
+
+a {
+  margin: 10px; }
+
+/* label color */
+.input-field label {
+  color: #FFFFFF; }
+
+/* label color */
+.input-field:focus label {
+  color: #A2A2A2; }
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #A2A2A2; }
+
+/* label underline focus color */
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid #FFFFFF;
+  box-shadow: 0 1px white; }
+
+/* label underline color */
+.input-field input[type=password] {
+  border-bottom: 1px solid #A2A2A2; }
+
+.input-field input[type=email] {
+  border-bottom: 1px solid #A2A2A2; }
+
+/* valid color */
+.input-field input[type=password].valid {
+  border-bottom: 1px solid #A2A2A2;
+  box-shadow: 0 1px 0 0 #A2A2A2; }
+
+/* invalid color */
+.input-field input[type=text] {
+  border-bottom: 1px solid #A2A2A2;
+  box-shadow: 0 1px 0 0 #000; }
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #000; }
+
+.cal-panel {
+  transition: box-shadow .25s;
+  padding: 20px;
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 2px;
+  background-color: #fff;
+  margin: 0 auto;
+  width: 900px; }
+
+.expand:hover {
+  transform: rotate(90deg); }
+
+.expand, .calendaricon {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out; }
+
+simple-calendar * {
+  user-select: none; }
+
+simple-calendar .calendar {
+  text-align: left;
+  padding: 0;
+  border: 1px solid #dddddd;
+  background-color: #fff;
+  border-radius: 10px; }
+
+simple-calendar .move-month {
+  cursor: pointer; }
+
+simple-calendar .prev-month {
+  float: left; }
+
+simple-calendar .next-month {
+  float: right; }
+
+simple-calendar .current-month {
+  width: 100%;
+  text-align: center;
+  padding: 20px 8px; }
+
+simple-calendar .week {
+  height: 100px; }
+  simple-calendar .week .day:last-child {
+    border-right: none; }
+
+simple-calendar .weekday {
+  text-align: center; }
+
+simple-calendar .weekday, simple-calendar .day {
+  display: inline-block;
+  width: calc(100% / 7); }
+
+simple-calendar .day {
+  height: 100px;
+  padding: 2px;
+  border: 1px solid #dddddd;
+  border-bottom: none;
+  border-left: none;
+  overflow: hidden; }
+  simple-calendar .day:hover {
+    cursor: pointer; }
+  simple-calendar .day.default {
+    background-color: lightblue; }
+  simple-calendar .day.event {
+    background-color: #fdf3ea; }
+  simple-calendar .day.disabled {
+    cursor: default;
+    color: silver;
+    background-color: white; }
+
+.searchmodal {
+  vertical-align: middle;
+  width: 300px;
+  margin-top: 100px;
+  border: 1px solid #A2A2A2;
+  border-radius: 5px; }
+
+.searchbody {
+  height: 179px; }
+
+.searchbutton {
+  margin-top: 10px;
+  margin-left: 37px; }
+
+.searchbar input[type=text] {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: grey; }
+
+.startdate {
+  width: 33.3333%; }
+
+.enddate {
+  width: 33.3333%; }
+
+html {
+  height: 100%;
+  background-color: white;
+  background-size: cover no-repeat center center fixed; }
+
+body {
+  overflow: auto; }
+
+a {
+  color: #A2A2A2;
+  text-align: center; }
+
+a:hover {
+  color: #C1C1C1; }
+
+.calendaricon:hover {
+  color: grey;
+  transform: scale(1.2); }
+
+.card-panel {
+  max-width: 800px;
+  min-width: 600px;
+  margin: 0 auto; }
