@@ -16,6 +16,7 @@ let isAuth = (AuthFactory) => new Promise ((resolve, reject) => {
 })
 
 
+ 
 
 app.config(function($routeProvider){
     $routeProvider.

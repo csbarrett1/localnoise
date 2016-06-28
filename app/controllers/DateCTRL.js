@@ -57,18 +57,18 @@ app.controller('DateCTRL', function($scope, $rootScope, $location, queryStore, $
                 let bandarrays = $scope.artists[i].slice(1, $scope.artists.length + 1);
                 $scope.openers.push(bandarrays);
               }
-              for (let i = 0; i < $scope.openers.length; i++){
-              console.log("openers", $scope.openers);
-                if ($scope.openers[i].length > 0) {
-                    var curropeners = $scope.openers[i].length;
-                    for (let i = 0; i < curropeners; i++){
-                        for (var key in $scope.openers[i]){
-                        $scope.openernames.push($scope.openers[i][key].Name);
-                            console.log("name", $scope.openernames);
-                        }
-                    }
-                }
-              }
+              // for (let i = 0; i < $scope.openers.length; i++){
+              // console.log("openers", $scope.openers);
+              //   if ($scope.openers[i].length > 0) {
+              //       var curropeners = $scope.openers[i].length;
+              //       for (let i = 0; i < curropeners; i++){
+              //           for (var key in $scope.openers[i]){
+              //           $scope.openernames.push($scope.openers[i][key].Name);
+              //               console.log("name", $scope.openernames);
+              //           }
+              //       }
+              //   }
+              // }
         }) 
       }
 
@@ -83,6 +83,10 @@ app.controller('DateCTRL', function($scope, $rootScope, $location, queryStore, $
             console.log("show", $scope.addToCal);
           })    
       }
+
+        $scope.details = () => {
+            $('#modal1').openModal();
+        }
 
 
 

@@ -1,12 +1,14 @@
-<div class="row">
+<div class="row header white">
   <div class="container">
-      <div class="col s12 center">
-        <img class="logo" src="./img/logo.png" alt="">
+
+      <div class="col s11 center">
+        <img class="logo center" src="./img/logo.png" alt="">
       </div>    
   </div>
 </div>
-  <div ng-show="isActive" class="center navbar">
-    <a ng-show="isActive" ng-href="#/search">search</a>
-    <a ng-show="isActive" ng-href="#/calendar">calendar</a>
-    <a ng-show="isActive" ng-href="#/logout">logout</a>
-  </div>
+<ul ng-show="isActive" id="slide-out" class="side-nav fixed">
+  <li><a ng-href="#/search">Search</a></li>
+  <li><a ng-href="#/calendar">Calendar</a></li>
+  <li><a ng-href="#/logout">Logout</a></li>
+</ul>
+    

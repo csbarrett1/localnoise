@@ -1,20 +1,38 @@
-.loginmodal {
-  width: 300px;
-  height: 425px;
-  border: 1px solid rgba(255, 255, 255, .3);
-  border-radius: 5px;
-  margin-top: 100px;
+#email, #password {
+  margin-top: 15px;
+  border: none;
+}
+
+#email:focus, #password:focus {
+  border: none;
+}
+
+.loginlogo {
+  margin-top: 20px;
+  width: 650px;
+  position: relative;
+  top: 400px;
+}
+
+.outerinput {
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 7px;
+  padding: 5px;
+  height: 100px;
+  padding: 10px;
+}
+
+#btn {
+  border-radius: 7px;
+  padding: 5px;
+  height: 100px;
   background-color: white;
-  border: 1px solid #A2A2A2;
+  position: relative;
+  border: solid 4px rgba(255, 255, 255, .3);
 }
 
-.loginbtn {
-  border-radius: 6px;
-  color: #939fb6;
-}
-
-.loginbody {
-  margin-top: 50px;
+label {
+  display: none;
 }
 
 h5 {
@@ -25,16 +43,7 @@ h5 {
   font-size: 20px;
 }
 
-.submit {
-  width: 100px;
-}
-
-.submit:hover {
-  cursor: pointer;
-}
-
-
-
-.plzlogin {
-  width: 100px;
+.loginmodal {
+  position: relative;
+  top: 400px;
 }

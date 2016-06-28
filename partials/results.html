@@ -1,7 +1,26 @@
-<div class="container">
-  <div class="card-panel z-depth-0">
+    
+    <div>  
+      <div class="row results">
+        <div class="col s12">
+          <div class="card white" ng-repeat="result in results track by $index"  >
+            <div ng-click="details()" class="card-content black-text">
+              <span class="card-title">{{headliners[$index]}}<br>@ {{venues[$index].Name}}</span>
+              <p>{{dates[$index]}}</p>
+            </div>
+            <div id="modal1" class="modal modalheight bottom-sheet">
+              <div class="modal-content col s12 ">
+              <span class="title">{{headliners[$index]}}</span>
+              <br>
+              <span>@ {{venues[$index].Name}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+<!--   <div class="card-panel z-depth-0">
     <div>Search Results:</div>
-     <ul class="collapsible z-depth-0" data-collapsible="accordion" >
+     <ul class="collapsible singleresult z-depth-0" data-collapsible="accordion" >
       <li ng-repeat="result in results track by $index">
         <div  class="collapsible-header"><i class="expand material-icons">view_headline</i>{{headliners[$index]}}<span class=center> @ {{venues[$index].Name}}</span><span class="right"><span class="right">{{dates[$index]}}</span></div>
         <div class="collapsible-body" >
@@ -17,6 +36,5 @@
       </li>
     </ul>  
   </div>
-</div>
-
-ng-if
+ -->
+<!-- ng-if -->

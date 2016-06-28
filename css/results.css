@@ -1,0 +1,18 @@
+.singleresult {
+  height: 100px; }
+
+.results {
+  position: relative;
+  top: 200px; }
+
+.modal-content {
+  height: 1744px;
+  background-color: #717171;
+  color: white; }
+
+.title {
+  font-size: 7em;
+  text-align: center; }
+
+#modal1 {
+  display: table; }

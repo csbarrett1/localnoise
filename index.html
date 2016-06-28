@@ -12,10 +12,10 @@
 
 </head>
 <body ng-app="LocalNoise">
+<img ng-show="!isActive" ng-class="backgroundimg" src="img/bg2.jpg" id="bg" alt="">
+  <div ng-show="isActive" ng-include="'./partials/navbar.html'"></div>
 
-  <div ng-include="'./partials/navbar.html'"></div>
-
-  <div ng-view></div>
+  <div class="ngviewbody" ng-view></div>
 
   <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>

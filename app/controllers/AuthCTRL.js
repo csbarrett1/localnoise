@@ -3,6 +3,7 @@
 app.controller("AuthCTRL", function($scope, $rootScope, $location, firebaseURL, AuthFactory){
   let ref = new Firebase(firebaseURL);
 
+
   $scope.hasUser = false;
 
   $scope.account = {

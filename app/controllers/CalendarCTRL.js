@@ -27,12 +27,3 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
 
 })
 
-
-june 13
-
-show show showCollection
-
-
-sept. 23
-
-show

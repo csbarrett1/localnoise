@@ -1,6 +1,7 @@
 .logo {
   margin-top: 20px;
-  width: 650px; }
+  width: 650px;
+  overflow: hidden; }
 
 a {
   margin: 10px; }
