@@ -13,7 +13,7 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
             id: addedShow.Id,
             date: addedShow.Date,
             venue: addedShow.Venue,
-            title: addedShow.Artists[0].Name,
+            artists: addedShow.Artists,
             ticketurl: addedShow.TicketUrl,
             added: false
           }))
@@ -35,8 +35,8 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
     return $q(function(resolve, reject) {
       $http
         .get(`${firebaseURL}shows.json`)
-        .success(function(chosenMovieObject){
-          var addedShowCollection = chosenMovieObject;
+        .success(function(chosenShowObject){
+          var addedShowCollection = chosenShowObject;
           Object.keys(addedShowCollection).forEach(function(key){
             addedShowCollection[key].id=key;
             addedShows.push(addedShowCollection[key]);

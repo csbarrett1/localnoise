@@ -22,19 +22,13 @@
   border-radius: 7px;
   padding: 5px;
   height: 100px;
+  color: white;
   background-color: white;
   position: relative;
   border: solid 4px rgba(255, 255, 255, 0.3); }
 
 label {
   display: none; }
-
-h5 {
-  text-align: center;
-  color: white;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 20px; }
 
 .loginmodal {
   position: relative;

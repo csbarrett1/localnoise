@@ -7,7 +7,7 @@
 
 .searchbody {
   position: relative;
-  top: 400px;
+  top: 600px;
 }
 
 .searchbutton {
@@ -28,13 +28,17 @@
   text-align: center;
   font-size: 3em;
   margin-bottom: 50px;
-  color: white;
+  color: black;
 }
 
-// .startdate {
-//   width: 33.3333%;
-// }
 
-// .enddate {
-//   width: 33.3333%;
-// }
+.datepickerdemoBasicUsage {
+  z-index: 10000;
+  /** Demo styles for mdCalendar. */ }
+  .datepickerdemoBasicUsage md-content {
+    padding-bottom: 200px; }
+  .datepickerdemoBasicUsage .validation-messages {
+    font-size: 12px;
+    color: #dd2c00;
+    margin: 10px 0 0 25px; }
+

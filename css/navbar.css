@@ -1,7 +1,6 @@
-.logo {
-  margin-top: 20px;
-  width: 650px;
-  overflow: hidden; }
-
-a {
-  margin: 10px; }
+.body {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  height: 5%; }

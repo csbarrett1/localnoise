@@ -14,3 +14,6 @@
   border-radius: 50%;
   -webkit-transition: -webkit-transform .2s ease-in-out;
   transition: transform .2s ease-in-out; }
+
+.buttons {
+  margin-left: 105px; }

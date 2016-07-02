@@ -1,14 +1,31 @@
-<div class="row header white">
+<footer ng-show="!isDark" class="page-footer body grey">
   <div class="container">
-
-      <div class="col s11 center">
-        <img class="logo center" src="./img/logo.png" alt="">
-      </div>    
+    <div class="row center">
+      <div class="col s4">
+        <a ng-href="#/search">Search</a>
+      </div>
+      <div class="col s4">
+        <a ng-href="#/calendar">Calendar</a>
+      </div>
+      <div class="col s4">
+        <a ng-href="#/logout">Logout</a>
+      </div>
+    </div>
   </div>
-</div>
-<ul ng-show="isActive" id="slide-out" class="side-nav fixed">
-  <li><a ng-href="#/search">Search</a></li>
-  <li><a ng-href="#/calendar">Calendar</a></li>
-  <li><a ng-href="#/logout">Logout</a></li>
-</ul>
-    
+</footer>
+
+<footer ng-show="isDark" class="page-footer body white">
+  <div class="container">
+    <div class="row center">
+      <div class="col s4">
+        <a class="grey" ng-href="#/search">Search</a>
+      </div>
+      <div class="col s4">
+        <a class="grey" ng-href="#/calendar">Calendar</a>
+      </div>
+      <div class="col s4">
+        <a class="grey" ng-href="#/logout">Logout</a>
+      </div>
+    </div>
+  </div>
+</footer>

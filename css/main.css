@@ -22,6 +22,7 @@
   border-radius: 7px;
   padding: 5px;
   height: 100px;
+  color: white;
   background-color: white;
   position: relative;
   border: solid 4px rgba(255, 255, 255, 0.3); }
@@ -29,24 +30,16 @@
 label {
   display: none; }
 
-h5 {
-  text-align: center;
-  color: white;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 20px; }
-
 .loginmodal {
   position: relative;
   top: 400px; }
 
-.logo {
-  margin-top: 20px;
-  width: 650px;
-  overflow: hidden; }
-
-a {
-  margin: 10px; }
+.body {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  height: 5%; }
 
 /* label color */
 .input-field label {
@@ -103,6 +96,9 @@ a {
   -webkit-transition: -webkit-transform .2s ease-in-out;
   transition: transform .2s ease-in-out; }
 
+.buttons {
+  margin-left: 105px; }
+
 .searchmodal {
   vertical-align: middle;
   margin-top: 100px;
@@ -111,7 +107,7 @@ a {
 
 .searchbody {
   position: relative;
-  top: 400px; }
+  top: 600px; }
 
 .searchbutton {
   margin-top: 10px;
@@ -130,26 +126,111 @@ a {
   text-align: center;
   font-size: 3em;
   margin-bottom: 50px;
-  color: white; }
+  color: black; }
+
+.datepickerdemoBasicUsage {
+  z-index: 10000;
+  /** Demo styles for mdCalendar. */ }
+
+.datepickerdemoBasicUsage md-content {
+  padding-bottom: 200px; }
+
+.datepickerdemoBasicUsage .validation-messages {
+  font-size: 12px;
+  color: #dd2c00;
+  margin: 10px 0 0 25px; }
+
+.logo {
+  margin-top: 20px;
+  width: 700px;
+  position: relative;
+  left: 20px;
+  overflow: hidden; }
+
+.collapsetop {
+  height: 55px;
+  font-size: 2.5em;
+  margin: 10px;
+  padding-top: 3px; }
+
+.sortcont {
+  margin-left: 35px; }
+
+.sortbutton {
+  text-align: center;
+  margin-left: 297px;
+  margin-top: -15px;
+  font-size: 2.5em;
+  color: rgba(0, 0, 0, 0.6);
+  border-radius: 7px;
+  height: 55px;
+  position: relative;
+  border: solid 3px rgba(0, 0, 0, 0.2); }
+
+#sort {
+  font-size: 2.5em;
+  padding: 20px;
+  color: grey;
+  border-bottom: 1px solid grey; }
+
+.dropdownlist {
+  width: 833.844px;
+  position: absolute;
+  top: 250px;
+  left: 35px;
+  opacity: 1;
+  border: 1px solid grey;
+  display: block;
+  background-color: #fff;
+  margin: 0;
+  display: none;
+  min-width: 100px;
+  max-height: 650px;
+  overflow-y: auto;
+  opacity: 0;
+  position: absolute;
+  z-index: 999;
+  will-change: width, height; }
 
 .singleresult {
   height: 100px; }
 
 .results {
   position: relative;
-  top: 200px; }
-
-.modal-content {
-  height: 1744px;
-  background-color: #717171;
-  color: white; }
+  top: 208px;
+  height: 100%;
+  overflow-y: scroll; }
 
 .title {
   font-size: 7em;
   text-align: center; }
 
-#modal1 {
-  display: table; }
+.result {
+  border-top: 1px solid grey; }
+
+#card {
+  margin: 0; }
+
+.button {
+  text-align: center;
+  margin-left: 297px;
+  margin-top: 26px;
+  font-size: 2.5em;
+  color: #1D1D1D;
+  border-radius: 7px;
+  height: 100px;
+  position: relative;
+  border: solid 4px rgba(0, 0, 0, 0.3); }
+
+#abtn {
+  padding-top: 30px; }
+
+.address {
+  color: black;
+  font-style: italic; }
+
+.headliner {
+  font-weight: 400; }
 
 html {
   z-index: -50;
@@ -158,10 +239,17 @@ html {
   border-radius: 7px;
   margin: 37px;
   width: 92%;
-  height: 95%; }
+  height: 100%; }
+
+.ngviewbody {
+  height: 81%; }
 
 body {
-  overflow: auto; }
+  overflow: hidden;
+  height: 100%; }
+
+i {
+  opacity: .5; }
 
 .header {
   position: fixed;
@@ -182,6 +270,11 @@ body {
   min-width: 100%;
   min-height: 100%; }
 
+#darkbg {
+  color: grey;
+  height: 100%;
+  width: 100%; }
+
 .display {
   display: none; }
 
@@ -192,7 +285,8 @@ input[type=email], input[type=password] {
 a {
   color: #FFFFFF;
   text-align: center;
-  font-size: 2.5em; }
+  font-size: 2.5em;
+  padding-top: 30px; }
 
 a:hover {
   color: #C1C1C1; }
@@ -200,3 +294,6 @@ a:hover {
 .calendaricon:hover {
   color: grey;
   transform: scale(1.2); }
+
+::-webkit-input-placeholder {
+  color: #827F82; }

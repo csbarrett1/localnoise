@@ -13,9 +13,11 @@
 </head>
 <body ng-app="LocalNoise">
 <img ng-show="!isActive" ng-class="backgroundimg" src="img/bg2.jpg" id="bg" alt="">
-  <div ng-show="isActive" ng-include="'./partials/navbar.html'"></div>
+  <div ng-show="isActive" ng-include="'./partials/header.html'"></div>
+  <div ng-show="isDark" id="darkbg" class="col s12"></div>
 
   <div class="ngviewbody" ng-view></div>
+  <div ng-show="isActive" ng-include="'./partials/navbar.html'"></div>
 
   <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
@@ -34,8 +36,6 @@
   <script type="text/javascript" src="app/controllers/AuthCTRL.js"></script>
   <script type="text/javascript" src="app/controllers/CalendarCTRL.js"></script>
   <script type="text/javascript" src="app/controllers/DateCTRL.js"></script>
-
-
 
 
 </body>

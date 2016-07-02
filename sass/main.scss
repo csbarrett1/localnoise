@@ -3,21 +3,30 @@
 @import 'materializeoverwrite';
 @import 'calendar';
 @import 'location';
+@import 'header';
 @import 'results';
 
 html {
-   z-index: -50;
-  // background-color: #303030;
+  z-index: -50; 
   vertical-align: middle;
   margin-top: 100px;
   border-radius: 7px;
   margin: 37px;
   width: 92%;
-  height: 95%;
+  height: 100%;
+}
+
+.ngviewbody {
+  height: 81%;
 }
 
 body {
-  overflow: auto;
+  overflow: hidden;
+  height: 100%;
+}
+
+i {
+  opacity: .5;
 }
 
 .header {
@@ -43,6 +52,12 @@ body {
   min-height: 100%;
 }
 
+#darkbg {
+  color: grey;
+  height: 100%;
+  width: 100%;
+}
+
 .display {
   display: none;
 }
@@ -55,7 +70,8 @@ input[type=email], input[type=password] {
 a {
   color: #FFFFFF;
   text-align: center;
-  font-size: 2.5em
+  font-size: 2.5em;
+  padding-top: 30px;
 }
 
 a:hover{
@@ -65,4 +81,9 @@ a:hover{
 .calendaricon:hover {
   color: grey;
   transform: scale(1.2)
+}
+
+
+::-webkit-input-placeholder {
+   color: #827F82;
 }

@@ -1,4 +1,4 @@
-var app = angular.module("LocalNoise", ["ngRoute", '500tech.simple-calendar', 'ui.materialize'])
+var app = angular.module("LocalNoise", ["ngRoute", 'ui.materialize'])
   .constant("firebaseURL", "https://localnoise.firebaseio.com/")
   .controller('BodyController', ["$scope", function ($scope) {
       $scope.select = {
@@ -16,7 +16,6 @@ let isAuth = (AuthFactory) => new Promise ((resolve, reject) => {
 })
 
 
- 
 
 app.config(function($routeProvider){
     $routeProvider.
