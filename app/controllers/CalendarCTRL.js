@@ -28,6 +28,8 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
     $scope.removeFromCalendar = (event) => {
       addedStorage.deleteEvent(event.id)
       .then(function(response){
+          console.log("", event);
+          console.log("", $scope.events);
         addedStorage.getAddedToCalList().then(function(someCollection){
           $scope.events = someCollection;
 
