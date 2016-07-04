@@ -52,17 +52,14 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
 
     var deleteEvent = function(chosenShowId){
     return $q(function(resolve, reject){
-      $http
-        .delete(firebaseURL + `/shows/${chosenShowId}.json`)
-        .success(function(objectFromFirebase){
-          resolve(objectFromFirebase);
+      $http.delete(firebaseURL + `/shows/${chosenShowId}.json`)
+           .success(function(objectFromFirebase){
+           resolve(objectFromFirebase);
         })
-        .error(function(error){
-          reject(error);
-      });
     });
   };
 
+  
 
     return {addShowToCal:addShowToCal, getAddedToCalList:getAddedToCalList, deleteEvent:deleteEvent};
 

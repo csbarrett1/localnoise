@@ -3,11 +3,11 @@
 
 <div class="row results">
   <div class="col s12">
-    <div id="card" class="card z-depth-0 result white" ng-model="selected" ng-repeat="event in events">
+    <div id="card" class="card z-depth-0 result white"  ng-repeat="event in events">
       <div class="card-content black-text">
         <span class="card-title">
         <p class="headliner">{{bands[$index]}}</p>
-        <p>@ {{venues[$index].Name}}<i ng-click="delete(event.id)" class="fa right fa-times" aria-hidden="true"></i></p>
+        <p>@ {{venues[$index].Name}}<i ng-click="openDeleteModal(event)" class="fa right fa-times" aria-hidden="true"></i></p>
         </span>
         <p>{{dates[$index]}}</p>
       </div>
@@ -18,7 +18,7 @@
             <div class="container buttons">
               <div class="row">
                   <button class="btn-flat searchbutton modal-close waves-effect transparent col s5 waves-light" type="submit">Cancel</button>
-                  <button class="btn-flat searchbutton modal-close waves-effect transparent col s5 offset-s1 waves-light" type="submit" ng-click="removeFromCalendar(event.id)">Confirm</button>
+                  <button class="btn-flat searchbutton modal-close waves-effect transparent col s5 offset-s1 waves-light" type="submit" ng-click="removeFromCalendar(deletethiseffingevent)">Confirm</button>
               </div>                  
             </div>
           </div>
