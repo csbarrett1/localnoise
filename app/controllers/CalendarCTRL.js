@@ -54,4 +54,3 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
 
 
 })
-
