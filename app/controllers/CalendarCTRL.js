@@ -5,6 +5,7 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
   $scope.dates = [];
   $scope.venues = [];
   $scope.artists = [];
+  $scope.ids = [];
   $scope.bands = [];
 
   addedStorage.getAddedToCalList().then(function(showCollection){
@@ -14,6 +15,7 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
       let newdate = $scope.events[i].date;
       $scope.dates.push(moment(newdate).format('MMMM Do, h:mm a'));
       $scope.venues.push($scope.events[i].venue)
+      $scope.ids.push($scope.events[i].id)
       $scope.artists.push($scope.events[i].artists)
     }
     for (let i = 0; i < $scope.artists.length; i++) {
