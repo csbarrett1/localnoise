@@ -29,7 +29,7 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
 
 
   $scope.delete = (selected) => {
-      $('#modal1').openModal();
+      $('#modal2').openModal(selected);
         console.log("", selected);
   }
 
