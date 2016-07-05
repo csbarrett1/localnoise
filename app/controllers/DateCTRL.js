@@ -55,40 +55,40 @@ app.controller('DateCTRL', function($scope, $rootScope, $location, queryStore, $
         }) 
       }
 
-      addedStorage.getAddedToCalList().then(function(someCollection){
-        $scope.events = someCollection;
-      });
+  // addedStorage.getAddedToCalList().then(function(someCollection){
+  //   $scope.events = someCollection;
+  // });
 
-      $scope.addToCalendar = () => {
+  $scope.addToCalendar = () => {
 
-        console.log("addedShow", $scope.selected);
-          $scope.selected.Added = true;
-          addedStorage.addShowToCal($scope.selected)
-          .then(function successCallback(response){
-            $scope.addToCal.push($scope.selected)
+    console.log("addedShow", $scope.selected);
+      $scope.selected.Added = true;
+      addedStorage.addShowToCal($scope.selected)
+      .then(function successCallback(response){
+        $scope.addToCal.push($scope.selected)
 
-            console.log("shows", $scope.addToCal);
-          })    
-      }
+        console.log("shows", $scope.addToCal);
+      })    
+  }
 
-        $scope.details = (result) => {
-            $scope.date = moment(result.Date).format('MMMM Do, h:mm a');
-            $scope.selected = result;
-            $scope.artist = [];
-            $scope.oneartist = [];
-            $scope.list = "";
+    $scope.details = (result) => {
+        $scope.date = moment(result.Date).format('MMMM Do, h:mm a');
+        $scope.selected = result;
+        $scope.artist = [];
+        $scope.oneartist = [];
+        $scope.list = "";
 
-            for (let i = 0; i < result.Artists.length; i++){
-              $scope.artist.push(result.Artists[i].Name)
-            }
-            if ($scope.artist.length === 1) {
-              $scope.oneartist.push($scope.artist[0])
-            } else {
-              $scope.list = $scope.artist.join(", ")
-            }
-
-            $('#modal1').openModal();
+        for (let i = 0; i < result.Artists.length; i++){
+          $scope.artist.push(result.Artists[i].Name)
         }
+        if ($scope.artist.length === 1) {
+          $scope.oneartist.push($scope.artist[0])
+        } else {
+          $scope.list = $scope.artist.join(", ")
+        }
+
+        $('#modal1').openModal();
+    }
 
 
 })

@@ -6,10 +6,10 @@
     <div id="card"  ng-swipe-left="openDeleteModal(event)" class="card z-depth-0 result white"  ng-repeat="event in events">
       <div class="card-content black-text">
         <span class="card-title">
-        <p class="headliner center">{{bands[$index]}}</p>
-        <p class="center">@ {{venues[$index].Name}}</p>
+        <p class="headliner center">{{event.artists[0].Name}}</p>
+        <p class="center">@ {{event.venue.Name}}</p>
         </span>
-        <p class="center">{{dates[$index]}}</p>
+        <p class="center">{{event.date}}</p>
         <div class="row">
             <a id="abtn" class="btn-flat modal-close button waves-effect transparent col s12 waves-light" ng-if="event.ticketurl !== ''" ng-href="{{event.ticketurl}}" target="_newtab" type="submit">Buy Tickets</a>
             <a id="abtn" class="btn-flat modal-close button disabled waves-effect transparent col s12 waves-light" ng-if="event.ticketurl === ''" ng-href="{{event.ticketurl}}" target="_newtab" type="submit">No Tickets Available</a>

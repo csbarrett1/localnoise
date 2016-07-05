@@ -52,6 +52,7 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
 
     var deleteEvent = function(chosenShowId){
     return $q(function(resolve, reject){
+      console.log("chosenShowId", chosenShowId);
       $http.delete(firebaseURL + `/shows/${chosenShowId}.json`)
            .success(function(objectFromFirebase){
            resolve(objectFromFirebase);
