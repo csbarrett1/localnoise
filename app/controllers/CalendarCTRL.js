@@ -6,7 +6,7 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
   $scope.venues = [];
   $scope.artists = [];
   $scope.ids = [];
-  $scope.bands = [];
+  $scope.bands = []; 
 
   addedStorage.getAddedToCalList().then(function(showCollection){
     console.log("showcollection", showCollection);
@@ -35,7 +35,6 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
       .then(function(response){
           console.log("", event);
         addedStorage.getAddedToCalList().then(function(showCollection){
-          $scope.events = [];
           $scope.events = showCollection;
           console.log("", $scope.events);
 

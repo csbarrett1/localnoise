@@ -197,7 +197,7 @@ label {
 
 .results {
   position: relative;
-  top: 208px;
+  top: 167px;
   height: 100%;
   overflow-y: scroll; }
 
@@ -232,6 +232,12 @@ label {
 .headliner {
   font-weight: 400; }
 
+.nodisplay {
+  display: none; }
+
+.display {
+  display: inherit; }
+
 html {
   z-index: -50;
   vertical-align: middle;
@@ -242,7 +248,7 @@ html {
   height: 100%; }
 
 .ngviewbody {
-  height: 81%; }
+  height: 83%; }
 
 body {
   overflow: hidden;

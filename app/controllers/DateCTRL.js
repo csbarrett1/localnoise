@@ -38,15 +38,19 @@ app.controller('DateCTRL', function($scope, $rootScope, $location, queryStore, $
         queryStore.searchCall($routeParams.zipcode, $routeParams.startdate)
           .then(function(queryResults){                  
             $scope.results = queryResults.Events;
+
             for (let i = 0; i < $scope.results.length; i++){
               $scope.venues.push($scope.results[i].Venue)
               $scope.artists.push($scope.results[i].Artists);
                 let newdate = new Date($scope.results[i].Date);
                   $scope.dates.push(moment(newdate).utcOffset("06:00").format('MMMM Do, h:mm a'));
+              $scope.results[i].Added = false;
+            
             }
+            
             for (let i = 0; i < $scope.artists.length; i++){
               $scope.headliners.push($scope.artists[i][0].Name);
-              $scope.urls.push($scope.results[i].TicketUrl);
+
             }
         }) 
       }
@@ -56,10 +60,13 @@ app.controller('DateCTRL', function($scope, $rootScope, $location, queryStore, $
       });
 
       $scope.addToCalendar = () => {
+
         console.log("addedShow", $scope.selected);
+          $scope.selected.Added = true;
           addedStorage.addShowToCal($scope.selected)
           .then(function successCallback(response){
             $scope.addToCal.push($scope.selected)
+
             console.log("shows", $scope.addToCal);
           })    
       }

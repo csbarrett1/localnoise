@@ -36,10 +36,10 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
       $http
         .get(`${firebaseURL}shows.json`)
         .success(function(chosenShowObject){
-          var addedShowCollection = chosenShowObject;
-          Object.keys(addedShowCollection).forEach(function(key){
-            addedShowCollection[key].id=key;
-            addedShows.push(addedShowCollection[key]);
+          // var addedShowCollection = chosenShowObject;
+          Object.keys(chosenShowObject).forEach(function(key){
+            chosenShowObject[key].id=key;
+            addedShows.push(chosenShowObject[key]);
         });
         resolve(addedShows);
       })

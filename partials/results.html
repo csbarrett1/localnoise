@@ -17,11 +17,11 @@
                 <a href="https://www.google.com/maps?q={{selected.Venue.Address}} {{selected.Venue.City}} {{selected.Venue.StateCode}} {{selected.Venue.ZipCode}}" target="_newtab" class="center address"><h4>{{selected.Venue.Name}}<br>{{selected.Venue.Address}}<br> {{selected.Venue.City}}, {{selected.Venue.StateCode}} {{selected.Venue.ZipCode}}</h4></a>
                 <div class="center">
                 <div class="row">
-                    <a id="abtn" class="btn-flat modal-close button waves-effect transparent col s12 waves-light" ng-href="{{selected.TicketUrl}}" target="_newtab" type="submit">Buy Tickets</a>
+                    <a id="abtn" class="btn-flat modal-close button waves-effect transparent col s12 waves-light" ng-if="selected.TicketUrl !== ''" ng-href="{{selected.TicketUrl}}" target="_newtab" type="submit">Buy Tickets</a>
                 </div>
                 <div class="row">
-                    <button class="btn-flat modal-close searchbutton waves-effect transparent col s12 waves-light" type="submit" ng-click="addToCalendar(selected)">Add to Calendar</button>
-<!--                     <button ng-show="isAdded" class="btn-flat disabled searchbutton waves-effect transparent col s12 waves-light" type="submit" ng-click="addToCalendar($index)">Add to Calendar</button>       -->
+                    <button class="btn-flat modal-close searchbutton waves-effect transparent col s12 waves-light" type="submit"  ng-if="selected.Added === false" ng-click="addToCalendar(selected)">Add to Calendar</button>
+                    <button class="btn-flat disabled searchbutton waves-effect transparent col s12 waves-light" ng-if="selected.Added === true" type="submit">Added!</button>      
               </div>
             </div>
             </div>
