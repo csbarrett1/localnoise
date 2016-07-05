@@ -8,8 +8,11 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
   $scope.ids = [];
   $scope.bands = []; 
 
+
+
   addedStorage.getAddedToCalList().then(function(showCollection){
     console.log("showcollection", showCollection);
+    console.log("showcollection", showCollection.length);
     $scope.events = showCollection;
     for (let i = 0; i < $scope.events.length; i++) {
       let newdate = $scope.events[i].date;
@@ -34,9 +37,11 @@ app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
       addedStorage.deleteEvent(event.id)
       .then(function(response){
           console.log("", event);
+          console.log("", showCollection.length);
         addedStorage.getAddedToCalList().then(function(showCollection){
           $scope.events = showCollection;
-          console.log("", $scope.events);
+          console.log("", showCollection);
+          console.log("", showCollection.length);
 
         });
       });

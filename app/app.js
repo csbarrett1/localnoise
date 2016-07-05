@@ -1,4 +1,4 @@
-var app = angular.module("LocalNoise", ["ngRoute", 'ui.materialize'])
+var app = angular.module("LocalNoise", ["ngRoute", 'ngTouch', 'ui.materialize'])
   .constant("firebaseURL", "https://localnoise.firebaseio.com/")
   .controller('BodyController', ["$scope", function ($scope) {
       $scope.select = {
