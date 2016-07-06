@@ -1,22 +1,19 @@
 
-.singleresult {
-  height: 100px;
+#singlecard {
+  padding: 10px;
 }
 
 .results {
-  position: relative;
-  top: 167px;
-  height: 100%;
+  height: 97%;
   overflow-y: scroll;
 }
 
-.title {
-  font-size: 7em;
-  text-align: center;
+#modal1 {
+  max-height: 100%;
 }
 
 .result {
-  border-top: 1px solid grey;
+  border-top: 1px solid #B4B4B4;
 }
 
 #card {
@@ -24,19 +21,7 @@
 }
 
 .button {
-  text-align: center;
-  margin-left: 297px;
-  margin-top: 26px;
-  font-size: 2.5em;
-  color: #1D1D1D;
-  border-radius: 7px;
-  height: 100px;
-  position: relative;
-  border: solid 4px rgba(0, 0, 0, .3);
-}
-
-#abtn {
-  padding-top: 30px;
+  border: 1px solid black;
 }
 
 .address {
@@ -45,7 +30,8 @@
 }
 
 .headliner {
-  font-weight: 400;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 
 .nodisplay {
@@ -54,4 +40,12 @@
 
 .display {
   display: inherit;
+}
+
+.viewbody {
+  margin: -30px -35px;
+}
+
+.detailartist {
+  font-weight: 500;
 }

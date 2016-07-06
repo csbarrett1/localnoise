@@ -8,16 +8,13 @@
 
 html {
   z-index: -50; 
-  vertical-align: middle;
-  margin-top: 100px;
   border-radius: 7px;
-  margin: 37px;
-  width: 92%;
   height: 100%;
 }
 
 .ngviewbody {
-  height: 83%;
+  height: 86%;
+  margin: 4px 37px;
 }
 
 body {
@@ -29,27 +26,17 @@ i {
   opacity: .5;
 }
 
-.header {
-  position: fixed;
-  z-index: 200;
-  top: 0;
-  width: 100%;
-}
-
 .logo {
-  width: 700px;
-  position: relative;
+  width: 70%;
 }
-
 
 #bg {
   position: fixed; 
   top: 0; 
   left: 0; 
   z-index: -100;
-  opacity: .8;
+  opacity: .9;
   min-width: 100%;
-  min-height: 100%;
 }
 
 #darkbg {
@@ -62,28 +49,10 @@ i {
   display: none;
 }
 
-input[type=email], input[type=password] {
-  font-size: 2.5em;
-  padding: 5px;
-}
-
 a {
-  color: #FFFFFF;
+  color: black;
   text-align: center;
-  font-size: 2.5em;
-  padding-top: 30px;
-}
-
-a:hover{
-  color: #C1C1C1;
-}
-
-.calendaricon:hover {
-  color: grey;
-  transform: scale(1.2)
+  font-size: 1em;
 }
 
 
-::-webkit-input-placeholder {
-   color: #827F82;
-}

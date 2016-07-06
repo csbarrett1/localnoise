@@ -4,7 +4,7 @@ app.controller("AuthCTRL", function($scope, $rootScope, $location, firebaseURL, 
   let ref = new Firebase(firebaseURL);
 
 
-  $scope.hasUser = false;
+  // $scope.hasUser = false;
 
   $scope.account = {
     email: "",
@@ -18,15 +18,13 @@ app.controller("AuthCTRL", function($scope, $rootScope, $location, firebaseURL, 
   }
 
   $scope.register = () => {
-    console.log("you clicked register");
     ref.createUser({
       email: $scope.account.email,
       password: $scope.account.password
     }, (error, userData) => {
       if(error){
-        console.log(`Error creating user: ${error}`)
-      } else{
-        console.log(`Created user account with uid: ${userData.uid}`)
+        console.log("", error);
+      } else {
         $scope.login();
       }
     });
@@ -34,11 +32,10 @@ app.controller("AuthCTRL", function($scope, $rootScope, $location, firebaseURL, 
 
 
   $scope.login = () => {
-    console.log("you clicked login");
     AuthFactory
       .authenticate($scope.account)
       .then(() => {
-        $scope.hasUser = true;
+        // $scope.hasUser = true;
         $rootScope.isActive = true;
         $location.path("/search");
         $scope.$apply();

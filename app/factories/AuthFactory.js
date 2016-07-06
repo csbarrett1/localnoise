@@ -27,7 +27,7 @@ app.factory("AuthFactory", function(firebaseURL) {
         }, (error, authData) => {
           if (error) {
             reject(error);
-            Materialize.toast(error, 3000);
+            Materialize.toast(error, 4000);
           } else {
             currentUserData = authData;
             resolve(authData);
@@ -44,7 +44,7 @@ app.factory("AuthFactory", function(firebaseURL) {
 
       return new Promise((resolve, reject) => {
         $http
-          .post(`${firebaseURL}/users.json`, stringifiedUser)
+          .post(firebaseURL + "users.json", stringifiedUser)
           .then(
             res => resolve(res),
             err => reject(err)

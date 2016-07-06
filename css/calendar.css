@@ -1,19 +1,15 @@
-.cal-panel {
-  transition: box-shadow .25s;
-  padding: 20px;
-  margin: 0.5rem 0 1rem 0;
-  border-radius: 2px;
-  background-color: #fff;
-  margin: 0 auto;
-  width: 900px; }
-
-.expand:hover {
-  transform: rotate(90deg); }
-
-.expand, .calendaricon {
-  border-radius: 50%;
-  -webkit-transition: -webkit-transform .2s ease-in-out;
-  transition: transform .2s ease-in-out; }
-
 .buttons {
-  margin-left: 105px; }
+  margin-left: 25px; }
+
+.modal {
+  padding: 0px; }
+
+#calcard {
+  height: 124px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-bottom: 15px; }
+
+#pad {
+  padding-top: 0; }

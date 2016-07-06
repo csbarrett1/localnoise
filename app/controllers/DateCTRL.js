@@ -26,13 +26,20 @@ app.controller('DateCTRL', function($scope, $rootScope, $location, queryStore, $
     $scope.clear = 'Clear';
     $scope.close = 'Close';
     var days = 1000;
-    $scope.minDate = (new Date($scope.currentTime.getTime() - ( 1000 * 60 * 60 *24 * days ))).toISOString();
+    $scope.minDate = (new Date($scope.currentTime.getTime())).toISOString();
     $scope.maxDate = (new Date($scope.currentTime.getTime() + ( 1000 * 60 * 60 *24 * days ))).toISOString();
 
 
   $scope.search = (zipcode, startdate) => {
+
+    if (zipcode === undefined) {
+        Materialize.toast("Please enter a zipcode" , 4000);
+        } else if (startdate === undefined) {
+          Materialize.toast("Please enter a date" , 4000);
+           } else {
     $location.path("/results").search({zipcode: zipcode, startdate: startdate});
   };
+  }
 
   if ($location.url === "search" || "results" || "calendar") {
         queryStore.searchCall($routeParams.zipcode, $routeParams.startdate)
@@ -42,8 +49,8 @@ app.controller('DateCTRL', function($scope, $rootScope, $location, queryStore, $
             for (let i = 0; i < $scope.results.length; i++){
               $scope.venues.push($scope.results[i].Venue)
               $scope.artists.push($scope.results[i].Artists);
-                let newdate = new Date($scope.results[i].Date);
-                  $scope.dates.push(moment(newdate).utcOffset("06:00").format('MMMM Do, h:mm a'));
+              let newdate = new Date($scope.results[i].Date);
+              $scope.dates.push(moment(newdate).utcOffset("06:00").format('MMMM Do, h:mm a'));
               $scope.results[i].Added = false;
             
             }
@@ -55,19 +62,12 @@ app.controller('DateCTRL', function($scope, $rootScope, $location, queryStore, $
         }) 
       }
 
-  // addedStorage.getAddedToCalList().then(function(someCollection){
-  //   $scope.events = someCollection;
-  // });
-
   $scope.addToCalendar = () => {
-
-    console.log("addedShow", $scope.selected);
       $scope.selected.Added = true;
       addedStorage.addShowToCal($scope.selected)
       .then(function successCallback(response){
         $scope.addToCal.push($scope.selected)
 
-        console.log("shows", $scope.addToCal);
       })    
   }
 

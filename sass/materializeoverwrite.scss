@@ -1,10 +1,10 @@
 /* label color */
    .input-field label {
-     color: #FFFFFF;
+     color: #7B7B7B;
    }
 /* label color */
    .input-field:focus label {
-     color: #A2A2A2;
+     color: #4C4C4C;
    }
    /* label focus color */
    .input-field input[type=text]:focus + label {
@@ -25,7 +25,7 @@
    /* valid color */
    .input-field input[type=password].valid {
      border-bottom: none;
-     box-shadow: 0 1px 0 0 #A2A2A2;
+     box-shadow: 0 1px 0 0 #424242;
    }
    /* invalid color */
    .input-field input[type=text] {

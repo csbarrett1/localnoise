@@ -15,7 +15,8 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
             venue: addedShow.Venue,
             artists: addedShow.Artists,
             ticketurl: addedShow.TicketUrl,
-            added: false
+            added: false,
+            uid: user.uid
           }))
         .success(function(objectFromFirebase) {
           resolve(objectFromFirebase);
@@ -34,9 +35,8 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
 
     return $q(function(resolve, reject) {
       $http
-        .get(`${firebaseURL}shows.json`)
+        .get(`${firebaseURL}shows.json?orderBy="uid"&equalTo="${user.uid}"`)
         .success(function(chosenShowObject){
-          // var addedShowCollection = chosenShowObject;
           Object.keys(chosenShowObject).forEach(function(key){
             chosenShowObject[key].id=key;
             addedShows.push(chosenShowObject[key]);
@@ -52,7 +52,6 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
 
     var deleteEvent = function(chosenShowId){
     return $q(function(resolve, reject){
-      console.log("chosenShowId", chosenShowId);
       $http.delete(firebaseURL + `/shows/${chosenShowId}.json`)
            .success(function(objectFromFirebase){
            resolve(objectFromFirebase);
