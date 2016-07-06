@@ -1,30 +1,16 @@
-
-<div class="loginmodal container col s4 offset-s4">
-  <div class="loginbody container">
-    <div class="row">
-      <div class="container">
-        <img class="plzlogin col s12" src="./img/Registertext.png" alt="">
-      </div>
-    </div>
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate" ng-model="account.email">
-            <label for="email">Email</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate" ng-model="account.password">
-            <label for="password">Password</label>
-          </div>
-        </div>
-        <div class="container">
-          <img class="submit col s12" ng-click="register()" src="./img/register.png" alt="">
-        </div>
-      </form>
-    </div>
+<div class=" loginmodal row">
+      <div class="col s12 center">
+        <img class="logo" src="./img/logo_white.png" alt="">
+      </div>    
+  <div class="input outerinput col s12">
+    <input id="email" type="email" ng-model="account.email" placeholder="Email">
+    <label for="email">Email</label>
   </div>
+  <div class="input outerinput col s12">
+    <input id="password" type="password" ng-model="account.password" placeholder="Password">
+    <label for="password">Password</label>
+  </div>
+    <div id="btn" class="btn-flat searchbutton waves-effect transparent col s12 waves-light" type="submit" ng-click="register()">REGISTER</div>
+    <br>
+    <a class="col s12 center" ng-href="#/login"><i class="fa fa-chevron-left" aria-hidden="true"></i> BACK</a>
 </div>
-  

@@ -1,38 +1,32 @@
 "use strict";
 
-app.controller('CalendarCTRL', function($scope, $location, addedStorage) {
-  $scope.events = [];
+app.controller('CalendarCTRL', ['$scope', '$location', 'addedStorage', function($scope, $location, addedStorage) {
+    addedStorage.getAddedToCalList().then(function(someCollection){
+    $scope.events = someCollection;
 
-  addedStorage.getAddedToCalList().then(function(showCollection){
-    $scope.events = showCollection;
+    $scope.parsedDate = [];
+
+    for (let i = 0; i < $scope.events.length; i++) {
+      let newdate = new Date($scope.events[i].date);
+      $scope.parsedDate.push(moment(newdate).utcOffset("06:00").format('MMMM Do, h:mm a'));
+    }
   });
 
+    $scope.openDeleteModal = (event) => {
+        $('#modal2').openModal();
+      console.log("", event);
+        $scope.deletethiseffingevent = event;
+    }
 
- $scope.calendarOptions = {
-    defaultDate: new Date(),
-    minDate: new Date(),
-    maxDate: new Date([2020, 12, 31]),
-    dayNamesLength: 9, // How to display weekdays (1 for "M", 2 for "Mo", 3 for "Mon"; 9 will show full day names; default is 1)
-    multiEventDates: true, // Set the calendar to render multiple events in the same day or only one event, default is false
-    maxEventsPerDay: 5, // Set how many events should the calendar display before showing the 'More Events' message, default is 3;
-    // eventClick: $scope.eventClick,
-    // dateClick: $scope.dateClick
-  };
+    $scope.removeFromCalendar = (event) => {
+      addedStorage.deleteEvent(event.id)
+      .then(function(response){
+        addedStorage.getAddedToCalList().then(function(stuff){
+          $scope.events = stuff;
 
-
-  for (let i = 0; i < $scope.events.length; i++){
-    console.log("date", $scope.events[i].date);
-  }
-
-
-})
+        });
+      });
+    };
 
 
-june 13
-
-show show showCollection
-
-
-sept. 23
-
-show
+}])

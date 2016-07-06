@@ -1,6 +1,14 @@
-.logo {
-  margin-top: 20px;
-  width: 650px; }
+.body {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  height: 45px; }
 
-a {
-  margin: 10px; }
+.navicon {
+  font-size: 1.5em;
+  color: white; }
+
+footer.page-footer {
+  z-index: 1000;
+  padding-top: 13px; }

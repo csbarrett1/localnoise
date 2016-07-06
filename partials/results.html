@@ -1,22 +1,29 @@
-<div class="container">
-  <div class="card-panel z-depth-0">
-    <div>Search Results:</div>
-     <ul class="collapsible z-depth-0" data-collapsible="accordion" >
-      <li ng-repeat="result in results track by $index">
-        <div  class="collapsible-header"><i class="expand material-icons">view_headline</i>{{headliners[$index]}}<span class=center> @ {{venues[$index].Name}}</span><span class="right"><span class="right">{{dates[$index]}}</span></div>
-        <div class="collapsible-body" >
-          <h3 class="center">{{headliners[$index]}}</h3>
-          <article class="center">{{openernames[$index]}}</article>
-          <address class="center"><p>{{venues[$index].Name}}<br>{{venues[$index].Address}}<br> {{venues[$index].City}}, {{venues[$index].StateCode}} {{venues[$index].ZipCode}}</p></address>
+<div class="viewbody row results">
+  <div class="col s12">
+    <div id="card" class="card z-depth-0 result white" ng-repeat="result in results track by $index">
+      <div id="singlecard" class="card-content black-text">
+        <span>
+        <p class="headliner">{{headliners[$index]}}</p>
+        <p>@ {{venues[$index].Name}}<i ng-click="details(result)" class="fa right fa-ellipsis-v" aria-hidden="true"></i></p>
+        </span>
+        <p>{{dates[$index]}}</p>
+      </div>
+      <div id="modal1" class="modal bottom-sheet custommodal z-depth-0" ng-model="selected">
+        <div class=" col s12 ">
+          <p class="detailartist col s12 center">{{oneartist[0]}}{{list}}</p>
+          <p class="center">{{date}}</p>
+          <a href="https://www.google.com/maps?q={{selected.Venue.Address}} {{selected.Venue.City}} {{selected.Venue.StateCode}} {{selected.Venue.ZipCode}}" target="_newtab" class="center address"><p>{{selected.Venue.Name}}<br>{{selected.Venue.Address}}<br> {{selected.Venue.City}}, {{selected.Venue.StateCode}} {{selected.Venue.ZipCode}}</p></a>
           <div class="center">
-            <a ng-href="{{urls[$index]}}" target="_newtab" class="waves-effect waves-light btn blue-grey z-depth-0">Buy Tickets</a>
-            <a ng-show="!isAdded" ng-click="addToCalendar($index)" class="waves-effect waves-light btn blue-grey z-depth-0">Add to Calendar</a>         
-            <a ng-show="isAdded" class="disabled btn z-depth-0">Add to Calendar</a>         
+            <div class="row">
+                <a id="abtn" class="btn-flat modal-close button waves-effect transparent col s12 waves-light" ng-if="selected.TicketUrl !== ''" ng-href="{{selected.TicketUrl}}" target="_newtab" type="submit">Buy Tickets</a>
+            </div>
+            <div class="row">
+                <button class="btn-flat modal-close button waves-effect transparent col s12 waves-light" type="submit"  ng-if="selected.Added === false" ng-click="addToCalendar(selected)">Add to Calendar</button>
+                <button class="btn-flat disabled button waves-effect transparent col s12 waves-light" ng-if="selected.Added === true" type="submit">Added!</button>      
+            </div>
           </div>
         </div>
-      </li>
-    </ul>  
+      </div>
+    </div>
   </div>
 </div>
-
-ng-if

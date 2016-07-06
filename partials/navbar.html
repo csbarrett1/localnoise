@@ -1,12 +1,15 @@
-<div class="row">
+<footer ng-show="!isDark" class="page-footer body grey">
   <div class="container">
-      <div class="col s12 center">
-        <img class="logo" src="./img/logo.png" alt="">
-      </div>    
+    <div class="row center">
+      <div class="col s4">
+        <a ng-href="#/search" class="fa fa-search navicon col s12" aria-hidden="true"></a>
+      </div>
+      <div class="col s4">
+        <a ng-href="#/calendar" class="fa fa-calendar-o navicon col s12" aria-hidden="true"></a>
+      </div>
+      <div class="col s4">
+        <a ng-href="#/logout" class="fa fa-sign-out navicon col s12" aria-hidden="true"></a>
+      </div>
+    </div>
   </div>
-</div>
-  <div ng-show="isActive" class="center navbar">
-    <a ng-show="isActive" ng-href="#/search">search</a>
-    <a ng-show="isActive" ng-href="#/calendar">calendar</a>
-    <a ng-show="isActive" ng-href="#/logout">logout</a>
-  </div>
+</footer>

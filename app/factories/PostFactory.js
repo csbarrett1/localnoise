@@ -13,9 +13,10 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
             id: addedShow.Id,
             date: addedShow.Date,
             venue: addedShow.Venue,
-            title: addedShow.Artists[0].Name,
+            artists: addedShow.Artists,
             ticketurl: addedShow.TicketUrl,
-            added: false
+            added: false,
+            uid: user.uid
           }))
         .success(function(objectFromFirebase) {
           resolve(objectFromFirebase);
@@ -34,12 +35,11 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
 
     return $q(function(resolve, reject) {
       $http
-        .get(`${firebaseURL}shows.json`)
-        .success(function(chosenMovieObject){
-          var addedShowCollection = chosenMovieObject;
-          Object.keys(addedShowCollection).forEach(function(key){
-            addedShowCollection[key].id=key;
-            addedShows.push(addedShowCollection[key]);
+        .get(`${firebaseURL}shows.json?orderBy="uid"&equalTo="${user.uid}"`)
+        .success(function(chosenShowObject){
+          Object.keys(chosenShowObject).forEach(function(key){
+            chosenShowObject[key].id=key;
+            addedShows.push(chosenShowObject[key]);
         });
         resolve(addedShows);
       })
@@ -52,17 +52,14 @@ app.factory("addedStorage", function($q, $http, firebaseURL, AuthFactory) {
 
     var deleteEvent = function(chosenShowId){
     return $q(function(resolve, reject){
-      $http
-        .delete(firebaseURL + `/shows/${chosenShowId}.json`)
-        .success(function(objectFromFirebase){
-          resolve(objectFromFirebase);
+      $http.delete(firebaseURL + `/shows/${chosenShowId}.json`)
+           .success(function(objectFromFirebase){
+           resolve(objectFromFirebase);
         })
-        .error(function(error){
-          reject(error);
-      });
     });
   };
 
+  
 
     return {addShowToCal:addShowToCal, getAddedToCalList:getAddedToCalList, deleteEvent:deleteEvent};
 

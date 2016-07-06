@@ -3,33 +3,56 @@
 @import 'materializeoverwrite';
 @import 'calendar';
 @import 'location';
+@import 'header';
+@import 'results';
 
 html {
+  z-index: -50; 
+  border-radius: 7px;
   height: 100%;
-  background-color: white;
-  background-size: cover no-repeat center center fixed;
+}
+
+.ngviewbody {
+  height: 86%;
+  margin: 4px 37px;
 }
 
 body {
-  overflow: auto;
+  overflow: hidden;
+  height: 100%;
+}
+
+i {
+  opacity: .5;
+}
+
+.logo {
+  width: 70%;
+}
+
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: -100;
+  opacity: .9;
+  min-width: 100%;
+}
+
+#darkbg {
+  color: grey;
+  height: 100%;
+  width: 100%;
+}
+
+.display {
+  display: none;
 }
 
 a {
-  color: #A2A2A2;
+  color: black;
   text-align: center;
+  font-size: 1em;
 }
 
-a:hover{
-  color: #C1C1C1;
-}
 
-.calendaricon:hover {
-  color: grey;
-  transform: scale(1.2)
-}
-
-.card-panel {
-  max-width: 800px;
-  min-width: 600px;
-  margin: 0 auto;
-}

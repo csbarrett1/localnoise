@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LocalNoise</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
@@ -12,15 +12,18 @@
 
 </head>
 <body ng-app="LocalNoise">
+<img ng-show="!isActive" ng-class="backgroundimg" src="img/bg2.jpg" id="bg" alt="">
+  <div ng-show="isActive" ng-include="'./partials/header.html'"></div>
+  <!-- <div ng-show="isDark" id="darkbg" class="col s12"></div> -->
 
-  <div ng-include="'./partials/navbar.html'"></div>
-
-  <div ng-view></div>
+  <div id="viewbody" class="ngviewbody" ng-view></div>
+  <div ng-show="isActive" ng-include="'./partials/navbar.html'"></div>
 
   <script type="text/javascript" src="lib/node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="lib/node_modules/angular/angular.min.js"></script>
   <script type="text/javascript" src="lib/node_modules/angular-route/angular-route.min.js"></script>
   <script type="text/javascript" src="lib/bower_components/firebase/firebase.js"></script>
+  <script type="text/javascript" src="lib/bower_components/angular-touch/angular-touch.js"></script>
   <script type="text/javascript" src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
   <script type="text/javascript" src="lib/bower_components/moment/min/moment.min.js"></script>
   <script type="text/javascript" src="lib/bower_components/angular-simple-calendar/dist/angular-simple-calendar.js"></script>
@@ -34,8 +37,6 @@
   <script type="text/javascript" src="app/controllers/AuthCTRL.js"></script>
   <script type="text/javascript" src="app/controllers/CalendarCTRL.js"></script>
   <script type="text/javascript" src="app/controllers/DateCTRL.js"></script>
-
-
 
 
 </body>
