@@ -1,4 +1,4 @@
-# localnoise
+# LocalNoise
 
 ##To Run
 
