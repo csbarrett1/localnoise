@@ -3,8 +3,8 @@
 ##To Run
 
 `bower init` - Choose Option 1 for Firebase
-
 `npm init`
+`http-server -p 9999`
 
 ##App Instructions
 
