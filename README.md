@@ -8,7 +8,7 @@
 
 ##App Instructions
 
-1. Register as a new user
+1. Login or register as a new user
 2. Enter zipcode and select start date
 3. Hit search button
 4. Use elipses to open Details modal
