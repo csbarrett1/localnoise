@@ -5,9 +5,10 @@
   padding: 0px; }
 
 #calcard {
+  background-color: whitesmoke;
   height: 124px;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid lightgrey;
   border-radius: 3px;
   margin-bottom: 15px; }
 

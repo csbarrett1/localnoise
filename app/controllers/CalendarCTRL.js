@@ -5,6 +5,7 @@ app.controller('CalendarCTRL', ['$scope', '$location', 'addedStorage', function(
     $scope.events = someCollection;
 
     $scope.parsedDate = [];
+    $scope.parsedDate.sort();
 
     for (let i = 0; i < $scope.events.length; i++) {
       let newdate = new Date($scope.events[i].date);
@@ -14,7 +15,6 @@ app.controller('CalendarCTRL', ['$scope', '$location', 'addedStorage', function(
 
     $scope.openDeleteModal = (event) => {
         $('#modal2').openModal();
-      console.log("", event);
         $scope.deletethiseffingevent = event;
     }
 
