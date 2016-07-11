@@ -1,12 +1,17 @@
 # LocalNoise
 
 ##To Run
+`cd` into lib/
 
 `bower init` - Choose Option 1 for Firebase
 
 `npm init`
 
+`cd` back to main app directory
+
 `http-server -p 9999`
+
+Run "localhost:9999'
 
 ##App Instructions
 
