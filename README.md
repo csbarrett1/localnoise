@@ -13,7 +13,7 @@
 
 Run "localhost:9999' in browser
 
-Set brower to mobile view
+Set brower window to mobile view
 
 ##App Instructions
 
