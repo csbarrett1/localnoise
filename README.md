@@ -7,7 +7,7 @@
 
 `npm init`
 
-`cd` back to main app directory
+`cd` back into root directory
 
 `http-server -p 9999`
 
