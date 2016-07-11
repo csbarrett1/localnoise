@@ -11,7 +11,9 @@
 
 `http-server -p 9999`
 
-Run "localhost:9999'
+Run "localhost:9999' in browser
+
+Set brower to mobile view
 
 ##App Instructions
 
